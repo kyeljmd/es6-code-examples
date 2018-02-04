@@ -1,0 +1,34 @@
+<!-- const weather = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve({ temp: 29, condition:'Sunny'});
+    }, 3000);
+});
+
+const tweets = new Promise((resolve) => {
+    setTimeout(() => {
+        resolve(["Item 1",'Item 2']);
+    },500);
+})
+
+
+//Wait for all promises to be resolved
+Promise.all([tweets,weather])
+.then(responses => {
+    const [tweetResp, weatherResp] = responses;
+    console.log(tweetResp);
+    console.log(weatherResp);
+}) -->
+
+<html>
+    <body>
+        <h1>promises</h1>
+    </body>
+    <script>
+        const postsPromise = fetch('https://wesbos.com/wp-json/wp/v2/posts');
+        const streetCarsPromise = fetch('https://data.ratp.fr/api/datasets/1.0/search/?q=paris');
+        Promise.all([postsPromise, streetCarsPromise])
+        .then(response => {
+            console.log(response);
+        });
+    </script>
+</html>
